@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Button, Flex, Grid, Stack, Text, Heading, Box} from "@chakra-ui/react";
+import {Button, Flex, Grid, Stack, Text, Heading, Box, useColorMode} from "@chakra-ui/react";
 import {BsCart4} from "react-icons/bs";
 
 import type {Product} from "../types";
@@ -25,6 +25,13 @@ const StoreScreen: React.FC<Props> = ({products, categoryType}) => {
   const [{total, quantity}, {addItem}] = useCart();
   const [isCartOpen, toggleCart] = React.useState<boolean>(false);
   // const bgBanner = dynamicBanners[categoryType];
+  const {colorMode, toggleColorMode} = useColorMode();
+
+  React.useEffect(() => {
+    if (colorMode === "dark") {
+      toggleColorMode();
+    }
+  }, []);
 
   return (
     <>

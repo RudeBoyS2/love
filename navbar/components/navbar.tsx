@@ -29,7 +29,14 @@ export default function WithSubnavigation(): JSX.Element {
   const {isOpen, onToggle} = useDisclosure();
 
   return (
-    <Box position={"fixed"} px={3} py={0} top={0} width={"100vw"} zIndex={"90"}>
+    <Box
+      bg={useColorModeValue("navbar", "transparent")}
+      position={"fixed"}
+      py={0}
+      top={0}
+      width={"100vw"}
+      zIndex={"90"}
+    >
       <Flex alignItems={"center"} height={"65px"} justifyContent={{base: "start"}} py={0}>
         <Flex
           alignItems={"center"}
@@ -146,7 +153,8 @@ const DesktopNav = () => {
             {navItem.children && (
               <PopoverContent
                 _focus={{boxShadow: "none"}}
-                bg="transparent"
+                backdropFilter="blur(9px)"
+                bg="popover"
                 border={0}
                 boxShadow={"xl"}
                 color="font"
@@ -208,7 +216,12 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack bg={useColorModeValue("bg", "gray.800")} display={{md: "none"}} p={4}>
+    <Stack
+      backdropFilter="blur(10px)"
+      bg={useColorModeValue("popover", "popover")}
+      display={{md: "none"}}
+      p={4}
+    >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -239,6 +252,7 @@ const MobileNavItem = ({label, children, href, type}: NavItem) => {
         {children && (
           <Icon
             as={ChevronDownIcon}
+            color="font"
             h={6}
             transform={isOpen ? "rotate(180deg)" : ""}
             transition={"all .25s ease-in-out"}
@@ -248,14 +262,7 @@ const MobileNavItem = ({label, children, href, type}: NavItem) => {
       </Flex>
 
       <Collapse animateOpacity in={isOpen} style={{marginTop: "0!important"}}>
-        <Stack
-          align={"start"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          borderLeft={1}
-          borderStyle={"solid"}
-          mt={2}
-          pl={4}
-        >
+        <Stack align={"start"} color="font" mt={2} pl={4}>
           {children &&
             children.map((child) => (
               <ChakraLink key={child.label} href={child.href} py={2} width="100%">

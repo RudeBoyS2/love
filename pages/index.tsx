@@ -1,5 +1,5 @@
 import React from "react";
-import {Flex, Heading, Button, chakra, isValidMotionProp} from "@chakra-ui/react";
+import {Flex, Heading, Button, chakra, isValidMotionProp, useColorMode} from "@chakra-ui/react";
 import {motion} from "framer-motion";
 
 const MotionButton = chakra(motion.div, {
@@ -39,6 +39,14 @@ const offText = `0 0 0px #fff,
 0 0 0px #0fa`;
 
 const index: React.FC = () => {
+  const {colorMode, toggleColorMode} = useColorMode();
+
+  React.useEffect(() => {
+    if (colorMode === "light") {
+      toggleColorMode();
+    }
+  }, []);
+
   return (
     <Flex align="center" h="100%" justify="center" w="100%">
       <video

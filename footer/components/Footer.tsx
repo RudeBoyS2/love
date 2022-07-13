@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
             width="100%"
           >
             <Flex fontFamily="body" fontWeight={500} gap="1px" textAlign={"center"}>
-              Copyright © {new Date().getFullYear()} - L<Text color="secondary">♥</Text>VE
+              Copyright © {new Date().getFullYear()} - L<Text color="navbar">♥</Text>VE
             </Flex>
             <Flex position={{md: "absolute"}} right="6">
               <Link isExternal href={"https://www.instagram.com/lovecorrientes/"} marginX={2}>
