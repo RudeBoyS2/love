@@ -7,11 +7,13 @@ const Footer: React.FC = () => {
       <Container
         alignItems={{base: "start", md: "center"}}
         backgroundColor="bg"
+        bottom={0}
+        color="font"
         display="flex"
-        flexDirection={{base: "column", md: "row"}}
+        flexDirection={{base: "row"}}
         justifyContent={{base: "center", md: "center"}}
         maxW="100%"
-        // p={0}
+        position="fixed"
         textAlign={{base: "left", md: "center"}}
       >
         <Flex direction="column" width="100%">
@@ -19,22 +21,23 @@ const Footer: React.FC = () => {
             alignItems="center"
             flexDirection={{base: "column", md: "row"}}
             gap="2"
+            height="50px"
             justifyContent="center"
-            my="4"
+            my={{base: "8", sm: "4"}}
             width="100%"
           >
-            <Text color="tertiary" fontFamily="body" fontWeight={500} textAlign={"center"}>
-              © Copyright {new Date().getFullYear()} - LOVE
-            </Text>
+            <Flex fontFamily="body" fontWeight={500} gap="1px" textAlign={"center"}>
+              Copyright © {new Date().getFullYear()} - L<Text color="secondary">♥</Text>VE
+            </Flex>
             <Flex position={{md: "absolute"}} right="6">
-              <Link isExternal href={"https://www.instagram.com/grekashowroom/"} marginX={2}>
+              <Link isExternal href={"https://www.instagram.com/lovecorrientes/"} marginX={2}>
                 <Flex
                   alignItems="center"
-                  backgroundColor={"transparent"}
+                  backgroundColor="transparent"
                   borderRadius={9999}
                   height={8}
                   justifyContent={"center"}
-                  opacity={0.7}
+                  opacity={1}
                   width={8}
                 >
                   <Image src={"/assets/icons/instagram.svg"} />
@@ -43,17 +46,16 @@ const Footer: React.FC = () => {
               <Link
                 isExternal
                 href={
-                  "https://mail.google.com/mail/?view=cm&source=mailto&to=grekashowroom@gmail.com"
+                  "https://mail.google.com/mail/?view=cm&source=mailto&to=monicascampe@gmail.com"
                 }
               >
                 <Flex
                   alignItems="center"
-                  backgroundColor={"transparent"}
+                  backgroundColor="transparent"
                   borderRadius={9999}
-                  color={"tertiary"}
                   height={8}
                   justifyContent="center"
-                  opacity={0.7}
+                  opacity={0.8}
                   paddingBottom={0.5}
                   width={8}
                 >
@@ -61,11 +63,11 @@ const Footer: React.FC = () => {
                 </Flex>
               </Link>
             </Flex>
+            <Divider display={{base: "none", sm: "block"}} opacity="0.3" orientation="vertical" />
+            <Text fontFamily="body" my={{base: "0", sm: "4"}} textAlign="center">
+              Created by {"{ riskOfDev }"}
+            </Text>
           </Flex>
-          <Divider borderBottomWidth="2px" opacity="0.5" w="100%" />
-          <Text color="tertiary" fontFamily="body" my="4" textAlign="center">
-            Created by {"{ riskOfDev }"}
-          </Text>
         </Flex>
       </Container>
     </>

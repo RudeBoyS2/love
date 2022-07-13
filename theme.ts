@@ -1,4 +1,4 @@
-import {extendTheme, theme} from "@chakra-ui/react";
+import {extendTheme} from "@chakra-ui/react";
 
 export default extendTheme({
   fonts: {
@@ -7,20 +7,16 @@ export default extendTheme({
   styles: {
     global: {
       body: {
-        bg: "linear-gradient(90deg, rgba(255,180,209,1) 0%, rgba(249,108,137,1) 100%)",
+        bg: "#f72863",
+        //"linear-gradient(90deg, rgba(255,180,209,1) 0%, rgba(249,108,137,1) 100%)",
       },
     },
   },
   colors: {
-    font: "#EDF2F7",
-    // primary: "#F4A5A5",
-    // secondary: "#202020",
-    // tertiary: "#444",
-    // font: theme.colors.black,
-    // bg: "#eee",
-    // bgSecondary: "#75CED4",
-    // bgContactMe: "#fff",
-    // button: "rgba(255,111,111,0.95)",
+    font: "#f5f7fa",
+    secondary: "#f72863",
+    // secondary: "#288ff7",
+    // secondary: "#e228f7",
   },
   components: {
     Radio: {

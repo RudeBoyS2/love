@@ -9,7 +9,7 @@ import useDebounce from "../../utils/hooks/useDebounce";
 
 /**
  * It's a search bar that uses debounce to prevent the user from spamming the search function.
- * @returns A component that renders a searchbar.
+ * @returns A component that renders a SearchBar.
  */
 const SearchBar: NextPage = () => {
   const router = useRouter();
@@ -28,15 +28,15 @@ const SearchBar: NextPage = () => {
   return (
     <InputGroup maxWidth={{sm: "200px", md: "300px"}} minWidth={{base: "100%", md: "55%"}}>
       <InputLeftElement pb={2}>
-        <AiOutlineSearch color="gray.300" />
+        <AiOutlineSearch color="#ccc" />
       </InputLeftElement>
       <Input
         _focus={{boxShadow: "none"}}
         _focusVisible={{
-          border: "1px solid rgba(1,1,1,0.7)",
+          border: "1px solid rgba(255,255,255,0.6)",
         }}
         backgroundColor="transparent"
-        border="1px solid rgba(1,1,1,0.3)"
+        border="1px solid rgba(255,255,255,0.4)"
         borderRadius="10"
         placeholder="Buscar productos..."
         size="sm"

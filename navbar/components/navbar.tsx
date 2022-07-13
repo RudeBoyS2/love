@@ -22,21 +22,15 @@ import {Link as ChakraLink} from "@chakra-ui/react";
 import {HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon} from "@chakra-ui/icons";
 import Link from "next/link";
 
-import Logo from "./logo";
-import SearchBar from "./searchBar";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
 
 export default function WithSubnavigation(): JSX.Element {
   const {isOpen, onToggle} = useDisclosure();
 
   return (
-    <Box position={"fixed"} py={0} top={0} width={"100vw"} zIndex={"90"}>
-      <Flex
-        alignItems={"center"}
-        backgroundColor={"transparent"}
-        height={"65px"}
-        justifyContent={{base: "start"}}
-        py={0}
-      >
+    <Box position={"fixed"} px={3} py={0} top={0} width={"100vw"} zIndex={"90"}>
+      <Flex alignItems={"center"} height={"65px"} justifyContent={{base: "start"}} py={0}>
         <Flex
           alignItems={"center"}
           flex={{base: 1}}
@@ -54,7 +48,7 @@ export default function WithSubnavigation(): JSX.Element {
           </Box>
           <Flex
             alignItems="center"
-            color="#444"
+            color="font"
             display={"flex"}
             flex={"1"}
             justifyContent="center"
@@ -68,6 +62,7 @@ export default function WithSubnavigation(): JSX.Element {
         </Flex>
         <Flex
           alignItems={"center"}
+          color="font"
           display={{base: "flex", md: "none"}}
           flex={{base: 0, md: 1}}
           ml={{base: -4}}
@@ -89,15 +84,15 @@ export default function WithSubnavigation(): JSX.Element {
 }
 
 const DesktopNav = () => {
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  // const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
     <Stack
-      direction={"row"}
+      direction="row"
       display={{base: "none", md: "flex"}}
-      flex={"1"}
-      justifyContent={"end"}
-      justifySelf={"end"}
+      flex="1"
+      justifyContent="end"
+      justifySelf="end"
       marginLeft={5}
       marginRight={3}
       spacing={3}
@@ -113,16 +108,17 @@ const DesktopNav = () => {
                       boxShadow: "none",
                     }}
                     _hover={{
-                      bg: useColorModeValue("pink.50", "FF6F6F"),
-                      color: "tertiary",
+                      bg: "transparent",
+                      // transform: "scale(1.1)",
+                      color: "secondary",
                     }}
                     alignItems={"center"}
                     backgroundColor={"transparent"}
                     borderRadius={7}
-                    color={"#eee"}
+                    color={"font"}
                     display={"flex"}
                     flexDirection={"column"}
-                    fontFamily={"navbar"}
+                    fontFamily={"body"}
                     fontSize={"sm"}
                     fontWeight={500}
                     minHeight={"4rem"}
@@ -130,15 +126,15 @@ const DesktopNav = () => {
                     pl={5}
                     pr={5}
                     textDecoration={"none"}
-                    transition={"all .2s ease"}
+                    transition={"all .1s ease"}
                   >
-                    {navItem.icon === "AiOutlineHome" && (
+                    {/* {navItem.icon === "AiOutlineHome" && (
                       <AiOutlineHome color={"tertiary"} size={"30"} />
                     )}
                     {navItem.icon === "RiTShirtLine" && (
                       <RiTShirtLine color={"tertiary"} size={"30"} />
                     )}
-                    {navItem.icon === "BsChatDots" && <BsChatDots color={"tertiary"} size={"30"} />}
+                    {navItem.icon === "BsChatDots" && <BsChatDots color={"tertiary"} size={"30"} />} */}
                     <Text fontWeight={500} pt={1}>
                       {navItem.label}
                     </Text>
@@ -150,9 +146,10 @@ const DesktopNav = () => {
             {navItem.children && (
               <PopoverContent
                 _focus={{boxShadow: "none"}}
-                bg={popoverContentBgColor}
+                bg="transparent"
                 border={0}
                 boxShadow={"xl"}
+                color="font"
                 minW={"sm"}
                 p={4}
                 rounded={"xl"}
@@ -176,7 +173,8 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
     <Link href={href}>
       <a>
         <Box
-          _hover={{bg: useColorModeValue("pink.50", "gray.900")}}
+          // _hover={{bg: useColorModeValue("pink.50", "gray.900")}}
+          _hover="transparent"
           cursor={"pointer"}
           display={"block"}
           p={2}
@@ -185,7 +183,7 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
         >
           <Stack align={"center"} direction={"row"}>
             <Box>
-              <Text _groupHover={{color: "pink.400"}} fontWeight={500} transition={"all .3s ease"}>
+              <Text _groupHover={{color: "secondary"}} fontWeight={500} transition={"all .1s ease"}>
                 {label}
               </Text>
               <Text fontSize={"sm"}>{subLabel}</Text>
@@ -197,9 +195,9 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
               justify={"flex-end"}
               opacity={0}
               transform={"translateX(-10px)"}
-              transition={"all .3s ease"}
+              transition={"all .1s ease"}
             >
-              <Icon as={ChevronRightIcon} color={"pink.400"} h={5} w={5} />
+              <Icon as={ChevronRightIcon} color={"secondary"} h={5} w={5} />
             </Flex>
           </Stack>
         </Box>
@@ -235,7 +233,7 @@ const MobileNavItem = ({label, children, href, type}: NavItem) => {
         justify={"space-between"}
         py={2}
       >
-        <Text color={useColorModeValue("gray.600", "gray.200")} fontWeight={600}>
+        <Text color="font" fontWeight={600}>
           {label}
         </Text>
         {children && (

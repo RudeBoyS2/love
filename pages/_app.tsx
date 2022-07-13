@@ -7,7 +7,7 @@ import {AppProps} from "next/app";
 import NProgress from "nprogress";
 
 import Footer from "../footer/components/Footer";
-import WithSubnavigation from "../navbar/components/navbar";
+import WithSubnavigation from "../Navbar/components/Navbar";
 import theme from "../theme";
 import Loading from "../loading/components/Loading";
 NProgress.configure({showSpinner: false});

@@ -12,26 +12,26 @@ interface Props {
   categoryType: string;
 }
 
-const dynamicBanners = {
-  todos: "url(/assets/banner/banner.jpg)",
-  "tops-remeras": "url(/assets/banner/remeras.jpg)",
-  vestidos: "url(/assets/banner/vestido.jpg)",
-  "shorts-polleras": "url(/assets/banner/polleras.jpg)",
-  jeans: "url(/assets/banner/jeans.jpg)",
-  abrigos: "url(/assets/banner/abrigos.jpg)",
-};
+// const dynamicBanners = {
+//   todos: "url(/assets/banner/banner.jpg)",
+//   "tops-remeras": "url(/assets/banner/remeras.jpg)",
+//   vestidos: "url(/assets/banner/vestido.jpg)",
+//   "shorts-polleras": "url(/assets/banner/polleras.jpg)",
+//   jeans: "url(/assets/banner/jeans.jpg)",
+//   abrigos: "url(/assets/banner/abrigos.jpg)",
+// };
 
 const StoreScreen: React.FC<Props> = ({products, categoryType}) => {
   const [{total, quantity}, {addItem}] = useCart();
   const [isCartOpen, toggleCart] = React.useState<boolean>(false);
-  const bgBanner = dynamicBanners[categoryType];
+  // const bgBanner = dynamicBanners[categoryType];
 
   return (
     <>
       <Box bg={"body"} height="1px" width="100%" />
       <Flex
         alignItems="center"
-        backgroundImage={bgBanner}
+        // backgroundImage={bgBanner}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
