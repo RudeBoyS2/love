@@ -5,6 +5,10 @@ const Document: React.FC = () => {
   return (
     <Html>
       <Head>
+        <title>Love</title>
+        <meta content="initial-scale=1.0, width=device-width" name="viewport" />
+        <meta content="accesorios" name="love" />
+        <meta content="Love Accesorios" name="copyright" />
         <link
           crossOrigin="anonymous"
           href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"

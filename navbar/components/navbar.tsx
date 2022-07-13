@@ -22,18 +22,20 @@ import {Link as ChakraLink} from "@chakra-ui/react";
 import {HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon} from "@chakra-ui/icons";
 import Link from "next/link";
 
+import Logo from "./logo";
 import SearchBar from "./searchBar";
 
 export default function WithSubnavigation(): JSX.Element {
   const {isOpen, onToggle} = useDisclosure();
 
   return (
-    <Box position={"sticky"} top={0} zIndex={"90"}>
+    <Box position={"fixed"} py={0} top={0} width={"100vw"} zIndex={"90"}>
       <Flex
         alignItems={"center"}
-        backgroundColor={"bg"}
+        backgroundColor={"transparent"}
         height={"65px"}
         justifyContent={{base: "start"}}
+        py={0}
       >
         <Flex
           alignItems={"center"}
@@ -46,9 +48,7 @@ export default function WithSubnavigation(): JSX.Element {
           <Box cursor={"pointer"}>
             <Link href={"/"}>
               <a>
-                <Heading color={"#333"} fontFamily={"header"} fontSize={{base: 24, md: 30}}>
-                  Greka
-                </Heading>
+                <Logo />
               </a>
             </Link>
           </Box>
@@ -119,7 +119,7 @@ const DesktopNav = () => {
                     alignItems={"center"}
                     backgroundColor={"transparent"}
                     borderRadius={7}
-                    color={"tertiary"}
+                    color={"#eee"}
                     display={"flex"}
                     flexDirection={"column"}
                     fontFamily={"navbar"}

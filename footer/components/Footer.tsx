@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
         flexDirection={{base: "column", md: "row"}}
         justifyContent={{base: "center", md: "center"}}
         maxW="100%"
+        // p={0}
         textAlign={{base: "left", md: "center"}}
       >
         <Flex direction="column" width="100%">
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
             width="100%"
           >
             <Text color="tertiary" fontFamily="body" fontWeight={500} textAlign={"center"}>
-              © Copyright {new Date().getFullYear()}. GREKA SHOWROOM
+              © Copyright {new Date().getFullYear()} - LOVE
             </Text>
             <Flex position={{md: "absolute"}} right="6">
               <Link isExternal href={"https://www.instagram.com/grekashowroom/"} marginX={2}>

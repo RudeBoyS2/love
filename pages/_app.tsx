@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useState} from "react";
 import Head from "next/head";
-import {ChakraProvider, Container, Stack, Center} from "@chakra-ui/react";
+import {ChakraProvider, Container, Box, Center} from "@chakra-ui/react";
 import Router from "next/router";
 import {AppProps} from "next/app";
 import NProgress from "nprogress";
@@ -25,14 +25,8 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
   });
 
   return (
-    <>
-      <Head>
-        <title>Greka Showroom</title>
-        <meta content="initial-scale=1.0, width=device-width" name="viewport" />
-        <meta content="showroom" name="greka" />
-        <meta content="Greka Showroom" name="copyright" />
-      </Head>
-      <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>
+      <Box height="100vh" maxWidth="100vw">
         <WithSubnavigation />
         {loading ? (
           <Center inset={0} minHeight="100vh" minWidth="100vw" paddingTop={20} position="absolute">
@@ -40,16 +34,12 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
           </Center>
         ) : (
           <>
-            <Container maxWidth="100vw" minHeight="100vh" padding={0}>
-              <Stack>
-                <Component {...pageProps} />
-              </Stack>
-            </Container>
-            <Footer />
+            <Component {...pageProps} />
           </>
         )}
-      </ChakraProvider>
-    </>
+        <Footer />
+      </Box>
+    </ChakraProvider>
   );
 };
 
