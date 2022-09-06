@@ -1,10 +1,10 @@
 import React from "react";
-import {Flex, Heading, chakra, isValidMotionProp, useColorMode} from "@chakra-ui/react";
+import {Flex, Heading, chakra, useColorMode} from "@chakra-ui/react";
 import {motion} from "framer-motion";
 
-const MotionButton = chakra(motion.div, {
-  shouldForwardProp: isValidMotionProp,
-});
+// const MotionButton = chakra(motion.div, {
+//   shouldForwardProp: isValidMotionProp,
+// });
 
 const litShadow = `0 0 .2rem #fff,
 0 0 .2rem #fff,
@@ -85,7 +85,7 @@ const Index: React.FC = () => {
         <Heading fontSize={{base: "30px", sm: "40px"}} fontWeight="300">
           Encontralos Acá
         </Heading>
-        <MotionButton
+        {/* <MotionButton
           animate={{
             textShadow: [
               litText,
@@ -138,7 +138,7 @@ const Index: React.FC = () => {
             0 0 151px #f5426c`}
         >
           Ver Productos
-        </MotionButton>
+        </MotionButton> */}
       </Flex>
     </Flex>
   );

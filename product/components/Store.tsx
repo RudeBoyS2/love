@@ -9,9 +9,10 @@ import {useCart} from "../../cart/context";
 
 interface Props {
   products: Product[];
+  categoryType: string;
 }
 
-const StoreScreen: React.FC<Props> = ({products}) => {
+const StoreScreen: React.FC<Props> = ({products, categoryType}) => {
   const [{total, quantity}, {addItem}] = useCart();
   const [isCartOpen, toggleCart] = React.useState<boolean>(false);
   const {colorMode, toggleColorMode} = useColorMode();

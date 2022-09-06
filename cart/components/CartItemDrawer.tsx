@@ -21,6 +21,7 @@ import {parseCurrency} from "../../utils/currency";
 import {Option} from "../../product/types";
 import {CartItem} from "../types";
 import {getCartItemPrice} from "../utils";
+import ImageSlider from "../../imageslider/components/ImageSlider";
 
 interface Props extends Omit<DrawerProps, "children"> {
   item: CartItem;
