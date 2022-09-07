@@ -20,8 +20,8 @@ const IndexRoute: React.FC<Props> = ({products, categoryType}) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
-  let products;
-  const categoryType = params.categoryType;
+  let products: Product[];
+  const categoryType = params.categoryType || "";
 
   if (params.categoryType === "todos") {
     products = await productApi.list();
