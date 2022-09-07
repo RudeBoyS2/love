@@ -38,21 +38,21 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths<{
-  categoryType: string | undefined;
-}> = async () => {
-  return {
-    paths: [
-      {params: {categoryType: "todos"}},
-      // {params: {categoryType: "tops/remeras"}},
-      {params: {categoryType: "jeans"}},
-      {params: {categoryType: "shorts/polleras"}},
-      // {params: {categoryType: "abrigos"}},
-      // {params: {categoryType: "vestidos"}},
-      // {params: {categoryType: "calzados"}},
-    ],
-    fallback: "blocking",
-  };
-};
+// export const getStaticPaths: GetStaticPaths<{
+//   categoryType: string | undefined;
+// }> = async () => {
+//   return {
+//     paths: [
+//       {params: {categoryType: "todos"}},
+//       // {params: {categoryType: "tops/remeras"}},
+//       {params: {categoryType: "jeans"}},
+//       {params: {categoryType: "shorts/polleras"}},
+//       // {params: {categoryType: "abrigos"}},
+//       // {params: {categoryType: "vestidos"}},
+//       // {params: {categoryType: "calzados"}},
+//     ],
+//     fallback: "blocking",
+//   };
+// };
 
 export default IndexRoute;
