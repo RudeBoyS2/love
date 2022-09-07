@@ -250,7 +250,7 @@ export default {
           }),
       );
   },
-  listByCategory: async (categoryType: string | string[]): Promise<IProduct[]> => {
+  listByCategory: async (categoryType: string | string[] | undefined): Promise<IProduct[]> => {
     return axios
       .get(process.env.PRODUCTS_CSV, {
         responseType: "blob",

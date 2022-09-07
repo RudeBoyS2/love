@@ -8,7 +8,7 @@ import CartProvider from "../../cart/context";
 
 interface Props {
   products: Product[];
-  categoryType: string;
+  categoryType: string | undefined;
 }
 
 const IndexRoute: React.FC<Props> = ({products, categoryType}) => {
@@ -44,12 +44,12 @@ export const getStaticPaths: GetStaticPaths<{
   return {
     paths: [
       {params: {categoryType: "todos"}},
-      {params: {categoryType: "tops/remeras"}},
-      {params: {categoryType: "pantalones"}},
+      // {params: {categoryType: "tops/remeras"}},
+      {params: {categoryType: "jeans"}},
       {params: {categoryType: "shorts/polleras"}},
-      {params: {categoryType: "abrigos"}},
-      {params: {categoryType: "vestidos"}},
-      {params: {categoryType: "calzados"}},
+      // {params: {categoryType: "abrigos"}},
+      // {params: {categoryType: "vestidos"}},
+      // {params: {categoryType: "calzados"}},
     ],
     fallback: "blocking",
   };
